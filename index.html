@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura simultânea</title>
+    <link rel="stylesheet" href="modelo-index.css"/>
+    <link rel="stylesheet" href="menu-superior.css">
+</head>
+<body onload="iniciar()">
+    <!--Informações sobre como funciona a página-->
+    <div id='bgmodalinfo' class="bgmodalinfo">
+        <div id='modalinfo' class="modal">
+            <div id="modalfecharinfo" class="modalfechar">
+                <div class="botaofechar">
+                    <img id="fecharinfo" class="fechar" src="fechar.png">
+                </div>
+            </div>
+            <div id="modaltextoinfo">
+                <h2 id="tituloinfo">INFORMAÇÕES</h2>
+                <p class="informacoes">
+                    Essa página foi desenvolvida para ser usada durante o evento escolar conhecido como Leitura Simultânea, onde os alunos podem escolher o livro que querem ouvir a leitura.
+                </p>
+                <p class="informacoes">
+                    Através dos botões na parte superior direita é possível deixar em tela cheia, redefinir(apagar), alterar o número máximo de alunos por livro de uma mesma turma, alterar o número total de alunos por livro, apagar a somatória total dos alunos, alterar as imagens referente aos livros, e é claro, se informar através deste.
+                </p>
+                <p class="informacoes">
+                    São feitas duas contagens: máximo de alunos e total de alunos. Sendo valores padrão para máximo de alunos = 3 e total de alunos = 25, esses valores podem ser alterados. Quando atingir esse limite o livro fica indisponível. Um livro pode ser escolhido 3 vezes em cada turma e/ou 25 vezes no total de todas as turmas.
+                </p>
+                <p class="informacoes">
+                    O valor padrão para o número máximo de alunos por livro de cada turma é 3, pensando em turmas com no máximo 30 alunos. Mas como informado acima, esse valor pode ser alterado conforme a necessidade. Esse valor não pode ser maior que o total de alunos por livro.
+                </p>
+                <p class="informacoes">
+                    O valor padrão para o número total de alunos é 25. Mas como informado acima, esse valor pode ser alterado conforme a necessidade. Esse valor não pode ser menor que o máximo de alunos por livro de cada turma.
+                </p>
+                <p class="informacoes">
+                    Se a somatória de alunos por livro atingir o número total de alunos por livro, ao recarregar a página será perguntado se deseja apagar essa somatória.
+                </p>
+                <p class="informacoes">
+                    Para alterar as imagens padrão dos livros deve-se trocar as imagens que estão na mesma pasta desta página, mas o formato(.jpg) e os nomes(a1, a2, a3...) devem ser mantidos.
+                </p>
+                </p>
+            </div>
+                                            
+            </div>
+        </div>
+    </div>
+    <!--Alterar as imagens dos livros-->
+    <div id='bgModalAlterar' class="bgmodalinfo">
+        <div id='modalAlterar' class="modal">
+            <div id="modalFecharAlterar" class="modalfechar">
+                <div class="botaofechar">
+                    <img id="fecharAlterar" class="fechar" src="fechar.png">
+                </div>
+            </div>
+            <div  id="modalTextoAlterar">
+                <div class="centernumero"><h2 id="tituloAlterar">ALTERAR IMAGENS DOS LIVROS</h2></div>
+                <div id="textoAlterar" class="centernumero">
+                    <p  class="informacoes">Escolha a imagem para substituir a anterior. Ao atualizar a página as imagens voltam ao padrão.</p>
+                </div>
+                <div class="livros">
+                    <div class="livro">
+                        <div><img class="livro" id="livro1" src="a1.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo1" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro2" src="a2.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo2" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro3" src="a3.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo3" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro4" src="a4.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo4" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro5" src="a5.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo5" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro6" src="a6.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo6" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro7" src="a7.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo7" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro8" src="a8.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo8" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro9" src="a9.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo9" type="file" accept="image/*"></div>
+                    </div>
+                    <div class="livro">
+                        <div><img class="livro" id="livro10" src="a10.jpg" alt=""></div>
+                        <div><input class="livro" id="arquivo10" type="file" accept="image/*"></div>
+                    </div>
+                </div>
+                <div class="centernumero"><div id="botaoOkAlterar" class="botaook">Salvar alterações</div></div>
+            </div>
+                                            
+            </div>
+        </div>
+    </div>
+    <!--Botão apagar a somatórias dos livros escolhidos-->
+    <div id='bgmodalapagar' class="bgmodalinfo">
+        <div id='modalApagar' class="modal">
+            <div id="modalfecharApagar" class="modalfechar">
+                <div class="botaofechar">
+                    <img id="fecharapagar" class="fechar" src="fechar.png">
+                </div>
+            </div>
+            <div id="modaltextototal">
+                <div class="centernumero"><h2 id="titulonumero">APAGAR SOMATÓRIA</h2></div>
+                <div class="centernumero">
+                    <p class="informacoes">Deseja apagar a somatória total de alunos por livro?</p>
+                    
+                </div>
+                <div class="centernumero"><div id="botaookapagar" class="botaook">OK</div></div>
+            </div>
+                                            
+            </div>
+        </div>
+    </div>
+    <!--Botão alterar número total de alunos-->
+    <div id='bgmodaltotal' class="bgmodalinfo">
+        <div id='modaltotal' class="modal">
+            <div id="modalfechartotal" class="modalfechar">
+                <div class="botaofechar">
+                    <img id="fechartotal" class="fechar" src="fechar.png">
+                </div>
+            </div>
+            <div id="modaltextototal">
+                <div class="centernumero"><h2 id="titulonumero">NÚMERO TOTAL DE ALUNOS</h2></div>
+                <div class="centernumero">
+                    <p class="informacoes">Escolha o número total de alunos por livro. Esta ação apagará as informações na tela. Ao atualizar a página esse número voltará ao valor padrão (25).</p>
+                    
+                </div>
+                <div class="centernumero"><input id="numerototal" class="botaook" type="number" min="1" max="40"></input></div>
+                <div class="centernumero"><div id="botaooktotal" class="botaook">OK</div></div>
+            </div>
+                                            
+            </div>
+        </div>
+    </div>
+    <!--Números máximo de alunos por livro de cada turma-->
+    <div id='bgmodalnumero' class="bgmodalinfo">
+        <div id='modalnumero' class="modal">
+            <div id="modalfecharnumero" class="modalfechar">
+                <div class="botaofechar">
+                    <img id="fecharnumero" class="fechar" src="fechar.png">
+                </div>
+            </div>
+            <div id="modaltextonumero">
+                <div class="centernumero"><h2 id="titulonumero">NÚMERO DE ALUNOS</h2></div>
+                <div class="centernumero">
+                    <p class="informacoes">Escolha o número máximo de alunos por livro. Esta ação apagará as informações na tela. Ao atualizar a página esse número voltará ao valor padrão (3).</p>
+                    
+                </div>
+                <div class="centernumero"><input id="numeroalunos" class="botaook" type="number" min="1" max="40"></input></div>
+                <div class="centernumero"><div id="botaook" class="botaook">OK</div></div>
+            </div>
+                                            
+            </div>
+        </div>
+    </div>
+    
+    
+    <header> 
+        <div id="menu-principal">
+           
+            <div id="menu-esquerda">
+                
+            </div>
+            <div id="menu-centro">
+                <div id="titulo" class="mid">ESCOLHA SEU LIVRO</div>
+            </div>
+            <div id="menu-direita">
+                <div id="info" title="Informações" class="full"><img class="menu" src="info.png"></div>
+                <div id="alterar" title="Alterar imagens" class="full"><img class="menu" src="alterar.png"></div>
+                <div id="apagar" title="Apagar somatória" class="full"><img class="menu" src="apagar.png"></div>
+                <div id="total" title="Total de alunos por livro" class="full"><img class="menu" src="total.png"></div>
+                <div id="num" title="Número máximo de alunos por livro de cada turma" class="full"><img class="menu" src="num.png"></div>
+                <div id="atualizar" title="Redefinir/apagar" class="full"><img class="menu" src="atualizar.png"></div>
+                <div id="full" title="Tela cheia" class="full"><img class="menu" src="full.png"></div>
+            </div>
+                       
+        </div>
+    </header>
+    
+    <section class="conteudo">
+        <div class="linha">            
+            <div id="a" class="coluna">
+                <div class="opcao"><label id="lopcao1" for="" >0</label></div> 
+                <div class="opcao" id="imga"><img id="a1" src="a1.jpg" class="opcao" alt="OPÇÃO 1"></div> 
+                <div class="opcao"><br></div>              
+            </div>
+            <div id="b" class="coluna">
+                <div class="opcao"><label id="lopcao2" for="" >0</label></div> 
+                <div class="opcao" id="imgb"><img id="a2" src="a2.jpg" class="opcao" alt="OPÇÃO 2"></div> 
+                <div class="opcao"></div>    
+               
+            </div>
+            <div id="c" class="coluna">
+                <div class="opcao"><label id="lopcao3" for="" >0</label></div> 
+                <div class="opcao" id="imgc"><img id="a3" src="a3.jpg" class="opcao" alt="OPÇÃO 3"></div> 
+                <div class="opcao"></div> 
+            </div>
+            <div id="d" class="coluna">
+                <div class="opcao"><label id="lopcao4" for="" >0</label></div> 
+                <div class="opcao" id="imgd" ><img id="a4" src="a4.jpg" class="opcao" alt="OPÇÃO 4"></div> 
+                <div class="opcao"></div>           
+            </div>
+            <div id="e" class="coluna">
+                <div class="opcao"><label id="lopcao5" for="" >0</label></div> 
+                <div class="opcao" id="imge" ><img id="a5" src="a5.jpg" class="opcao" alt="OPÇÃO 5"></div> 
+                <div class="opcao"></div> 
+               
+            </div>
+            <div id="f" class="coluna">
+                <div class="opcao"><label id="lopcao6" for="" >0</label></div> 
+                <div class="opcao" id="imgf"><img id="a6" src="a6.jpg" class="opcao" alt="OPÇÃO 6"></div> 
+                <div class="opcao"><br></div> 
+            </div>
+            <div id="g" class="coluna">
+                <div class="opcao"><label id="lopcao7" for="" >0</label></div> 
+                <div class="opcao" id="imgg" ><img id="a7" src="a7.jpg" class="opcao" alt="OPÇÃO 7"></div> 
+                <div class="opcao"></div> 
+               
+            </div>
+            <div id="h" class="coluna">
+                <div class="opcao"><label id="lopcao8" for="" >0</label></div> 
+                <div class="opcao" id="imgh" ><img id="a8" src="a8.jpg" class="opcao" alt="OPÇÃO 8"></div> 
+                <div class="opcao"></div> 
+            </div>
+            <div id="i" class="coluna">
+                <div class="opcao"><label id="lopcao9" for="" >0</label></div> 
+                <div class="opcao" id="imgi" ><img id="a9" src="a9.jpg" class="opcao" alt="OPÇÃO 9"></div> 
+                <div class="opcao"></div> 
+            </div>
+            <div id="j" class="coluna">
+                <div class="opcao"><label id="lopcao10" for="" >0</label></div> 
+                <div class="opcao" id="imgj" ><img id="a10" src="a10.jpg" class="opcao" alt="OPÇÃO 10"></div> 
+                <div class="opcao"></div> 
+            </div>
+            
+        </div>
+        
+    </section>
+    <footer> 
+    </footer>
+    <script src="script-index.js"></script>
+</body>
+</html>
